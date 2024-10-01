@@ -8,6 +8,9 @@ spec:
     spec:
       containers:
       - name: manager
+        env:
+        - name: ENABLE_CONVERSION_WEBHOOK
+          value: "true"
         ports:
         - containerPort: 9443
           name: webhook-server
@@ -21,3 +24,5 @@ spec:
         secret:
           defaultMode: 420
           secretName: webhook-server-cert
+
+        
